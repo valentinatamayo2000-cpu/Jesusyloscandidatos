@@ -35,8 +35,22 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${interFont.variable} ${sourceSerifFont.variable} bg-background`}>
-      <body className="font-sans antialiased text-foreground">
+    <html lang="es" className={`${interFont.variable} ${sourceSerifFont.variable}`} style={{
+      '--background': '#f7f7f6',
+      '--foreground': '#2d2d2d',
+      '--card': '#ffffff',
+      '--card-foreground': '#2d2d2d',
+      '--primary': '#3d3d3d',
+      '--primary-foreground': '#f7f7f6',
+      '--secondary': '#f2f2f1',
+      '--secondary-foreground': '#3d3d3d',
+      '--border': '#e5e5e5',
+      '--muted': '#ececeb',
+      '--muted-foreground': '#808080',
+      '--accent': '#b8860b',
+      '--accent-foreground': '#ffffff',
+    } as React.CSSProperties}>
+      <body className="font-sans antialiased text-foreground bg-background">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
